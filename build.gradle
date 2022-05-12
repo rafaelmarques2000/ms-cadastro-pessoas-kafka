@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.rafa'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
+	implementation 'org.apache.kafka:kafka-clients:3.1.0'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
